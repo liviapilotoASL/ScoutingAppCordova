@@ -1,3 +1,9 @@
+function returnToMainPage() {
+  $("#game-scouting:visible, #pit-scouting:visible").fadeOut(function(){
+    $("#home").fadeIn();
+  })
+}
+
 $(document).ready(function(){
   $('.asl-pit-scouting').click(function(){
   	var teamName = $(this).parent().parent().attr('data-team');
@@ -13,11 +19,7 @@ $(document).ready(function(){
       $("#game-scouting span.team-name").text(teamName);
     });
   });
-  $('.navbar-brand').click(function(){
-  	$("#game-scouting:visible, #pit-scouting:visible").fadeOut(function(){
-  		$("#home").fadeIn();
-  	})
-  });
+  $('.navbar-brand').click(returnToMainPage);
   $('.points-element button').click(function(){
   	if ($(this).hasClass('points-up')) {
   		$(this).parent().parent().find('.points-total').text(parseInt($(this).parent().parent().find('.points-total').html()) + 1) 
@@ -26,4 +28,6 @@ $(document).ready(function(){
   		$(this).parent().parent().find('.points-total').text(parseInt($(this).parent().parent().find('.points-total').text()) - 1) 
   	}
   });
+  
+  document.addEventListener("backbutton", returnToMainPage, false);
 });
