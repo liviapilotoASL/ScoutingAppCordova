@@ -9,10 +9,11 @@ $(document).ready(function(){
   	var teamName = $(this).parent().parent().attr('data-team');
     $("#home").fadeOut(function(){
       $("#pit-scouting").fadeIn();
-      $("#pit-scouting span.team-name").text(teamName);
+      $("#pit-scouting h2.team-name").text(teamName);
     });
   });
   $('.asl-game-scouting').click(function(){
+    console.log("test")
   	var teamName = $(this).parent().parent().attr('data-team');
     $("#home").fadeOut(function(){
       $("#game-scouting").fadeIn();
