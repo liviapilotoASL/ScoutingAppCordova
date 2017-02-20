@@ -13,7 +13,6 @@ $(document).ready(function(){
     });
   });
   $('.asl-game-scouting').click(function(){
-    console.log("test")
   	var teamName = $(this).parent().parent().attr('data-team');
     $("#home").fadeOut(function(){
       $("#game-scouting").fadeIn();
