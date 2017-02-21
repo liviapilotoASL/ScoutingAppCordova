@@ -4,6 +4,18 @@ function returnToMainPage() {
   })
 }
 
+function clearGameScouting() {
+  $('.points-total').text(0);
+  
+  $(':input','#game-scouting')
+  .removeAttr('checked')
+  .removeAttr('selected')
+  .not(':button, :submit, :reset, :hidden, :radio, :checkbox')
+  .val('');
+  
+  $('input:checkbox, #game-scouting').prop('checked', false);
+}
+
 $(document).ready(function(){
   $('.asl-pit-scouting').click(function(){
   	var teamName = $(this).parent().parent().attr('data-team');
@@ -27,6 +39,13 @@ $(document).ready(function(){
   	if ($(this).hasClass('points-down')) {
   		$(this).parent().parent().find('.points-total').text(parseInt($(this).parent().parent().find('.points-total').text()) - 1) 
   	}
+  });
+  
+  $("#game-scouting-submit").click(function() {
+    // submit form
+    
+    returnToMainPage();
+    clearGameScouting();
   });
   
   document.addEventListener("backbutton", returnToMainPage, false);
