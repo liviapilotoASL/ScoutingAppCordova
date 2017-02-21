@@ -34,10 +34,12 @@ $(document).ready(function(){
   $('.navbar-brand').click(returnToMainPage);
   $('.points-element button').click(function(){
   	if ($(this).hasClass('points-up')) {
-  		$(this).parent().parent().find('.points-total').text(parseInt($(this).parent().parent().find('.points-total').html()) + 1) 
+      var points = parseInt($(this).parent().parent().find('.points-total').html()) + 1;
+  		$(this).parent().parent().find('.points-total').text(points < 0 ? 0 : points);
   	}
   	if ($(this).hasClass('points-down')) {
-  		$(this).parent().parent().find('.points-total').text(parseInt($(this).parent().parent().find('.points-total').text()) - 1) 
+      var points = parseInt($(this).parent().parent().find('.points-total').html()) - 1;
+  		$(this).parent().parent().find('.points-total').text(points < 0 ? 0 : points);
   	}
   });
   
