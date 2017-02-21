@@ -53,7 +53,7 @@
       <div class='col-sm-4'>
         <button class='pull-right points-down'> - </button>
       </div>
-      <div class='col-sm-4 text-center points-total'>0</div>
+      <div class='col-sm-4 text-center points-total' id=game-scouting-shot-points>0</div>
       <div class='col-sm-4'>
         <button class='pull-left points-up'> + </button>
       </div>
@@ -67,7 +67,7 @@
       <div class='col-sm-4'>
         <button class='pull-right points-down'> - </button>
       </div>
-      <div class='col-sm-4 text-center points-total'>0</div>
+      <div class='col-sm-4 text-center points-total' id=game-scouting-gears-points>0</div>
       <div class='col-sm-4'>
         <button class='pull-left points-up'> + </button>
       </div>
@@ -81,7 +81,7 @@
       <div class='col-sm-4'>
         <button class='pull-right points-down'> - </button>
       </div>
-      <div class='col-sm-4 text-center points-total'>0</div>
+      <div class='col-sm-4 text-center points-total' id=game-scouting-shooting-fouls>0</div>
       <div class='col-sm-4'>
         <button class='pull-left points-up'> + </button>
       </div>
@@ -95,7 +95,7 @@
       <div class='col-sm-4'>
         <button class='pull-right points-down'> - </button>
       </div>
-      <div class='col-sm-4 text-center points-total'>0</div>
+      <div class='col-sm-4 text-center points-total' id=game-scouting-gears-fouls>0</div>
       <div class='col-sm-4'>
         <button class='pull-left points-up'> + </button>
       </div>
@@ -109,7 +109,7 @@
       <div class='col-sm-4'>
         <button class='pull-right points-down'> - </button>
       </div>
-      <div class='col-sm-4 text-center points-total'>0</div>
+      <div class='col-sm-4 text-center points-total' id=game-scouting-human-fouls>0</div>
       <div class='col-sm-4'>
         <button class='pull-left points-up'> + </button>
       </div>
@@ -124,7 +124,7 @@
         Gears
       </div>
       <div class="col-sm-4">
-        <input type='checkbox'>
+        <input type='checkbox' id=game-scouting-gears-auto>
       </div>
     </div>
   </div>
@@ -134,7 +134,7 @@
         Driving Accross The Line
       </div>
       <div class="col-sm-4">
-        <input type='checkbox'>
+        <input type='checkbox' id=game-scouting-line-auto>
       </div>
     </div>
   </div>
@@ -148,12 +148,12 @@
         Team with players in ship
       </div>
       <div class="col-sm-4">
-        <input type='checkbox'> Team One<br />
-        <input type='checkbox'> Team Two<br />
-        <input type='checkbox'> Team Three<br />
-        <input type='checkbox'> Team Four<br />
-        <input type='checkbox'> Team Five<br />
-        <input type='checkbox'> Team Six
+        <input type='checkbox' id=game-scouting-ship-team-1> Team One<br />
+        <input type='checkbox' id=game-scouting-ship-team-2> Team Two<br />
+        <input type='checkbox' id=game-scouting-ship-team-3> Team Three<br />
+        <input type='checkbox' id=game-scouting-ship-team-4> Team Four<br />
+        <input type='checkbox' id=game-scouting-ship-team-5> Team Five<br />
+        <input type='checkbox' id=game-scouting-ship-team-6> Team Six
       </div>
     </div>
   </div>
@@ -163,7 +163,7 @@
         Any Defense?
       </div>
       <div class="col-sm-4">
-        <textarea></textarea>
+        <textarea id=game-scouting-defense></textarea>
       </div>
     </div>
   </div>
@@ -176,7 +176,7 @@
     Climbing
   </div>
   <div class="col-sm-4">
-    <input type='checkbox'>
+    <input type='checkbox' id=game-scouting-climbing>
   </div>
 </div>
 <div class="row">
@@ -184,7 +184,7 @@
     Shooting After Climb
   </div>
   <div class="col-sm-4">
-    <input type='checkbox'>
+    <input type='checkbox' id=game-scouting-shooting-after-climbing>
   </div>
 </div>
 <div class="row">
@@ -192,7 +192,7 @@
     Activated Hopper
   </div>
   <div class="col-sm-4">
-    <input type='checkbox'>
+    <input type='checkbox' id=game-scouting-hopper>
   </div>
 </div>
 
@@ -201,7 +201,7 @@
     Where is the robot getting the fuel?
   </div>
   <div class="col-sm-4">
-    <textarea></textarea>
+    <textarea id=game-scouting-fuel-location></textarea>
   </div>
 </div>
 
