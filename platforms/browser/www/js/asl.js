@@ -16,6 +16,44 @@ function clearGameScouting() {
   $('input:checkbox, #game-scouting').prop('checked', false);
 }
 
+function getGameScoutingData() {
+  var data = {};
+  data["auto"] = {};
+  data["auto"]["high-goals"] =  parseInt($("#game-scouting-auto-high-goals").text());
+  data["auto"]["low-goals"] = parseInt($("#game-scouting-auto-low-goals").text());
+  data["auto"]["gears"] = parseInt($("#game-scouting-auto-gears").text());
+  data["auto"]["baseline"] = $("#game-scouting-auto-baseline").prop("checked");
+  
+  data["teleop"] = {};
+  data["teleop"]["high-goals"] = parseInt($("#game-scouting-high-goals").text());
+  data["teleop"]["low-goals"] = parseInt($("#game-scouting-low-goals").text());
+  data["teleop"]["hoppers"] = parseInt($("#game-scouting-hoppers").text());
+  data["teleop"]["gears"] = 
+  parseInt($("#game-scouting-gears").text());
+  
+  data["fouls"] ={};
+  data["fouls"]["gears"] = parseInt($("#game-scouting-gears-fouls").text());
+  data["fouls"]["human"] = 
+  parseInt($("#game-scouting-human-fouls").text());
+  data["fouls"]["shooting"] = 
+  parseInt($("#game-scouting-shooting-fouls").text());
+  
+  data["endgame"] = {};
+  data["endgame"]["climbing"] = $("#game-scouting-climbing").prop("checked");
+  data["endgame"]["shooting"] = $("#game-scouting-shooting-after-climbing").prop("checked");
+  
+  data["other"] = {};
+  data["other"]["pilot"] = $("#game-scouting-ship").prop("checked");
+  data["other"]["defense"] = $("#game-scouting-defense").val();
+  data["other"]["fuel"] = $("#game-scouting-fuel-location").val();
+  data["other"]["notes"] = $("#game-scouting-final-notes").val();
+  
+    
+  console.log(data)
+  
+  return data
+}
+
 $(document).ready(function(){
   $('.asl-pit-scouting').click(function(){
   	var teamName = $(this).parent().parent().attr('data-team');
@@ -45,6 +83,7 @@ $(document).ready(function(){
   
   $("#game-scouting-submit").click(function() {
     // submit form
+    getGameScoutingData();
     
     returnToMainPage();
     clearGameScouting();

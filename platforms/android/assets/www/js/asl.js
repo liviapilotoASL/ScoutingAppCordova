@@ -16,6 +16,20 @@ function clearGameScouting() {
   $('input:checkbox, #game-scouting').prop('checked', false);
 }
 
+function getGameScoutingData() {
+  var data = {};
+  data["auto"] = {
+    high-goals: parseInt($('#game-scouting-auto-high-goals').text());
+    low-goals: parseInt($('#game-scouting-auto-low-goals').text());
+    auto-gears: parseInt($('#game-scouting-auto-gears').text());
+  }
+  
+  
+  console.log(data)
+  
+  return data
+}
+
 $(document).ready(function(){
   $('.asl-pit-scouting').click(function(){
   	var teamName = $(this).parent().parent().attr('data-team');
@@ -45,6 +59,7 @@ $(document).ready(function(){
   
   $("#game-scouting-submit").click(function() {
     // submit form
+    getGameScoutingData();
     
     returnToMainPage();
     clearGameScouting();
