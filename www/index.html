@@ -44,16 +44,17 @@
       <div class="container-fluid" style="display:none" id="game-scouting">
         <h3>Game Scouting (<span class='team-name'></span>)</h3>
 
+<h2>Autonomous Ability</h2>
 <div class="row">
   <div class="col-sm-4">
     <div class='row points-element'>
       <div class='col-sm-12 text-center'>
-        <h3>Shot Points</h3>
+        <h3>High Goal Balls Scored</h3>
       </div>
       <div class='col-sm-4 col-xs-4'>
         <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
       </div>
-      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-shot-points>0</div>
+      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-high-goals>0</div>
       <div class='col-sm-4 col-xs-4'>
         <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
       </div>
@@ -62,18 +63,102 @@
   <div class="col-sm-4">
     <div class='row points-element'>
       <div class='col-sm-12 text-center'>
-        <h3>Gears Points</h3>
+        <h3>Low Goal Balls Scored</h3>
       </div>
       <div class='col-sm-4 col-xs-4'>
         <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
       </div>
-      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears-points>0</div>
+      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-low-goals>0</div>
       <div class='col-sm-4 col-xs-4'>
         <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
       </div>
     </div>
   </div>
   <div class="col-sm-4">
+    <div class='row points-element'>
+      <div class='col-sm-12 text-center'>
+        <h3>Gears Scored</h3>
+      </div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+      </div>
+      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-gears>0</div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-8 col-xs-8">
+        Crossing the baseline
+      </div>
+      <div class="col-sm-4 col-xs-4">
+        <input type='checkbox' id=game-scouting-auto-baseline>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Teleop Ability</h2>
+<div class="row">
+  <div class="col-sm-4 col-xs-12">
+    <div class='row points-element'>
+      <div class='col-sm-12 text-center'>
+        <h3>High Goal Balls Scored</h3>
+      </div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+      </div>
+      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-high-goals>0</div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-12">
+    <div class='row points-element'>
+      <div class='col-sm-12 text-center'>
+        <h3>Low Goal Balls Scored</h3>
+      </div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+      </div>
+      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-low-goals>0</div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-12">
+    <div class='row points-element'>
+      <div class='col-sm-12 text-center'>
+        <h3>Hoppers Activated</h3>
+      </div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+      </div>
+      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-hoppers>0</div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-12">
+    <div class='row points-element'>
+      <div class='col-sm-12 text-center'>
+        <h3>Gears Scored</h3>
+      </div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+      </div>
+      <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears>0</div>
+      <div class='col-sm-4 col-xs-4'>
+        <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-12">
     <div class='row points-element'>
       <div class='col-sm-12 text-center'>
         <h3>Shooting Fouls</h3>
@@ -87,7 +172,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4 col-xs-12">
     <div class='row points-element'>
       <div class='col-sm-12 text-center'>
         <h3>Gears Fouls</h3>
@@ -101,7 +186,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4 col-xs-12">
     <div class='row points-element'>
       <div class='col-sm-12 text-center'>
         <h3>Human Fouls</h3>
@@ -116,61 +201,8 @@
     </div>
   </div>
 </div>
-<h2>Autonomous Ability</h2>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm-8 col-xs-8">
-        Gears
-      </div>
-      <div class="col-sm-4 col-xs-4">
-        <input type='checkbox' id=game-scouting-gears-auto>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm-8 col-xs-8">
-        Crossing the baseline
-      </div>
-      <div class="col-sm-4 col-xs-4">
-        <input type='checkbox' id=game-scouting-line-auto>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h2>Other</h2>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm-4">
-        Team with players in ship
-      </div>
-      <div class="col-sm-4">
-        <input type='checkbox' id=game-scouting-ship-team-1> Team One<br />
-        <input type='checkbox' id=game-scouting-ship-team-2> Team Two<br />
-        <input type='checkbox' id=game-scouting-ship-team-3> Team Three<br />
-        <input type='checkbox' id=game-scouting-ship-team-4> Team Four<br />
-        <input type='checkbox' id=game-scouting-ship-team-5> Team Five<br />
-        <input type='checkbox' id=game-scouting-ship-team-6> Team Six
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm-4">
-        Any Defense?
-      </div>
-      <div class="col-sm-4">
-        <textarea class="form-control" rows="2" id=game-scouting-defense></textarea>
-      </div>
-    </div>
-  </div>
-</div>
 
 <h2>End Game</h2>
-
 <div class="row">
   <div class="col-sm-4 col-xs-8">
     Climbing
@@ -187,14 +219,6 @@
     <input type='checkbox' id=game-scouting-shooting-after-climbing>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-4 col-xs-8">
-    Activated Hopper
-  </div>
-  <div class="col-sm-4 col-xs-4">
-    <input type='checkbox' id=game-scouting-hopper>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-sm-4">
@@ -202,6 +226,30 @@
   </div>
   <div class="col-sm-4">
     <textarea class="form-control" rows="2" id=game-scouting-fuel-location></textarea>
+  </div>
+</div>
+
+<h2>Other</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-8 col-xs-8">
+        Did they put a pilot in the airship?
+      </div>
+      <div class="col-sm-4 col-xs-4">
+        <input type='checkbox' id=game-scouting-ship-team-1> 
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-4">
+        Did they play defense? If so, how?
+      </div>
+      <div class="col-sm-4">
+        <textarea class="form-control" rows="2" id=game-scouting-defense></textarea>
+      </div>
+    </div>
   </div>
 </div>
 
