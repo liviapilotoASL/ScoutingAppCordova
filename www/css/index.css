@@ -14,3 +14,21 @@
 .team-number {
   line-height: 100%;
 }
+
+.submit {
+  width: 100%;
+  margin: 20px 5px !important;
+}
+
+#game-scouting textarea {
+  resize: none;
+}
+
+.navbar-default {
+  margin: 20px 0;
+}
+
+.points-total {
+  font-size: 36px;
+  height: 100%;
+}
