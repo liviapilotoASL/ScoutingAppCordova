@@ -47,47 +47,57 @@ function getGameScoutingData() {
   data["other"]["defense"] = $("#game-scouting-defense").val();
   data["other"]["fuel"] = $("#game-scouting-fuel-location").val();
   data["other"]["notes"] = $("#game-scouting-final-notes").val();
-  
-    
-  console.log(data)
-  
   return data
 }
 
 $(document).ready(function(){
-  $('.asl-pit-scouting').click(function(){
-  	var teamName = $(this).parent().parent().attr('data-team');
-    $("#home").fadeOut(function(){
-      $("#pit-scouting").fadeIn();
-      $("#pit-scouting h2.team-name").text(teamName);
+  $("#home").load("../matches.html", function() {
+    $('.asl-pit-scouting').click(function(){
+    	var teamName = $(this).parent().parent().attr('data-team');
+      $("#home").fadeOut(function(){
+        $("#pit-scouting").fadeIn();
+        $("#pit-scouting h2.team-name").text(teamName);
+      });
     });
-  });
-  $('.asl-game-scouting').click(function(){
-  	var teamName = $(this).parent().parent().attr('data-team');
-    $("#home").fadeOut(function(){
-      $("#game-scouting").fadeIn();
-      $("#game-scouting span.team-name").text(teamName);
+    $('.asl-game-scouting').click(function(){
+    	var teamName = $(this).parent().parent().attr('data-team');
+      $("#home").fadeOut(function(){
+        $("#game-scouting").fadeIn();
+        $("#game-scouting span.team-name").text(teamName);
+      });
     });
-  });
-  $('.navbar-brand').click(returnToMainPage);
-  $('.points-element button').click(function(){
-  	if ($(this).hasClass('points-up')) {
-      var points = parseInt($(this).parent().parent().find('.points-total').html()) + 1;
-  		$(this).parent().parent().find('.points-total').text(points < 0 ? 0 : points);
-  	}
-  	if ($(this).hasClass('points-down')) {
-      var points = parseInt($(this).parent().parent().find('.points-total').html()) - 1;
-  		$(this).parent().parent().find('.points-total').text(points < 0 ? 0 : points);
-  	}
-  });
-  
-  $("#game-scouting-submit").click(function() {
-    // submit form
-    getGameScoutingData();
+    $('.navbar-brand').click(returnToMainPage);
+    $('.points-element button').click(function(){
+    	if ($(this).hasClass('points-up')) {
+        var points = parseInt($(this).parent().parent().find('.points-total').html()) + 1;
+    		$(this).parent().parent().find('.points-total').text(points < 0 ? 0 : points);
+    	}
+    	if ($(this).hasClass('points-down')) {
+        var points = parseInt($(this).parent().parent().find('.points-total').html()) - 1;
+    		$(this).parent().parent().find('.points-total').text(points < 0 ? 0 : points);
+    	}
+    });
     
-    returnToMainPage();
-    clearGameScouting();
-  });
-  
-  document.addEventListener("backbutton", returnToMainPage, false);
+    $("#game-scouting-submit").click(function() {
+      // submit form
+      var data = getGameScoutingData();
+      
+      var filename = "log.txt"
+      
+      window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
+        alert(cordova.file.externalDataDirectory);
+        dir.getFile(filename, { create: true }, function (file) {
+          if(confirm("Do you want to overwrite existing scouting data if it exists?"))
+            file.createWriter(function(writer) {
+              writer.write(JSON.stringify(data));
+            })
+        });
+      });
+      
+      returnToMainPage();
+      clearGameScouting();
+    });
+    
+    document.addEventListener("backbutton", returnToMainPage, false);
+  })
 });

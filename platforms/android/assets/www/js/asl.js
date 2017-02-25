@@ -18,15 +18,35 @@ function clearGameScouting() {
 
 function getGameScoutingData() {
   var data = {};
-  data["auto"] = {
-    high-goals: parseInt($('#game-scouting-auto-high-goals').text());
-    low-goals: parseInt($('#game-scouting-auto-low-goals').text());
-    auto-gears: parseInt($('#game-scouting-auto-gears').text());
-  }
+  data["auto"] = {};
+  data["auto"]["high-goals"] =  parseInt($("#game-scouting-auto-high-goals").text());
+  data["auto"]["low-goals"] = parseInt($("#game-scouting-auto-low-goals").text());
+  data["auto"]["gears"] = parseInt($("#game-scouting-auto-gears").text());
+  data["auto"]["baseline"] = $("#game-scouting-auto-baseline").prop("checked");
   
+  data["teleop"] = {};
+  data["teleop"]["high-goals"] = parseInt($("#game-scouting-high-goals").text());
+  data["teleop"]["low-goals"] = parseInt($("#game-scouting-low-goals").text());
+  data["teleop"]["hoppers"] = parseInt($("#game-scouting-hoppers").text());
+  data["teleop"]["gears"] = 
+  parseInt($("#game-scouting-gears").text());
   
-  console.log(data)
+  data["fouls"] ={};
+  data["fouls"]["gears"] = parseInt($("#game-scouting-gears-fouls").text());
+  data["fouls"]["human"] = 
+  parseInt($("#game-scouting-human-fouls").text());
+  data["fouls"]["shooting"] = 
+  parseInt($("#game-scouting-shooting-fouls").text());
   
+  data["endgame"] = {};
+  data["endgame"]["climbing"] = $("#game-scouting-climbing").prop("checked");
+  data["endgame"]["shooting"] = $("#game-scouting-shooting-after-climbing").prop("checked");
+  
+  data["other"] = {};
+  data["other"]["pilot"] = $("#game-scouting-ship").prop("checked");
+  data["other"]["defense"] = $("#game-scouting-defense").val();
+  data["other"]["fuel"] = $("#game-scouting-fuel-location").val();
+  data["other"]["notes"] = $("#game-scouting-final-notes").val();
   return data
 }
 
@@ -59,7 +79,20 @@ $(document).ready(function(){
   
   $("#game-scouting-submit").click(function() {
     // submit form
-    getGameScoutingData();
+    var data = getGameScoutingData();
+    
+    var filename = "log.txt"
+    confirm("hello")
+    
+    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
+      alert(cordova.file.externalDataDirectory);
+      dir.getFile(filename, { create: true }, function (file) {
+        if(confirm("Do you want to overwrite existing scouting data if it exists?"))
+          file.createWriter(function(writer) {
+            writer.write(JSON.stringify(data));
+          })
+      });
+  });
     
     returnToMainPage();
     clearGameScouting();

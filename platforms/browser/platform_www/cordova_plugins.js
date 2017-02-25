@@ -185,7 +185,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-compat": "1.1.0",
-    "cordova-plugin-file": "4.3.1"
+    "cordova-plugin-file": "4.3.1",
+    "cordova-plugin-console": "1.0.5"
 }
 // BOTTOM OF METADATA
 });
