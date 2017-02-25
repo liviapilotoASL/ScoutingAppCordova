@@ -61,9 +61,11 @@ $(document).ready(function(){
     });
     $('.asl-game-scouting').click(function(){
     	var teamName = $(this).parent().parent().attr('data-team');
+      var matchNumber = $(this).parent().parent().attr('data-match');
       $("#home").fadeOut(function(){
         $("#game-scouting").fadeIn();
         $("#game-scouting span.team-name").text(teamName);
+        $("#game-scouting span.match-number").text(matchNumber);
       });
     });
     $('.navbar-brand').click(returnToMainPage);
@@ -82,7 +84,7 @@ $(document).ready(function(){
       // submit form
       var data = getGameScoutingData();
       
-      var filename = "log.txt"
+      var filename = "match" + $("#game-scouting span.match-number").text() + "-" + $("#game-scouting span.team-name").text();
       
       window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
         alert(cordova.file.externalDataDirectory);

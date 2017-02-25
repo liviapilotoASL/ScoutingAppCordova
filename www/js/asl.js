@@ -100,6 +100,6 @@ $(document).ready(function(){
       clearGameScouting();
     });
     
-    document.addEventListener("backbutton", returnToMainPage, false);
+    docuent.addEventListener("backbutton", returnToMainPage, false);
   })
 });
