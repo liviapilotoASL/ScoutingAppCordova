@@ -46,7 +46,10 @@
            Picture: 
          </div>
          <div class="col-sm-8">
-          <textarea class="form-control" rows="2" id=pit-drive-train>placeholder</textarea>
+          <button id="capture-photo-button">Capture Photo</button> <br />
+          <button id="upload-photo-button">From Photo Library</button><br>
+          <img style="display:none;width:200px;height:400px;" id="smallImage" src="" />
+          <img style="display:none;" id="largeImage" src="" />
         </div>
         <div class="col-sm-4">
           Drive Train description
@@ -413,5 +416,6 @@ Are they activating the hopper? Where is the robot getting the fuel?
   <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
   <script type="text/javascript" src="js/asl.js"></script>
+  <script type="text/javascript" src="js/photo.js"></script>
 </body>
 </html>
