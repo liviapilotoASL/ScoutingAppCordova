@@ -43,330 +43,335 @@
         <h2>General Robot Information</h2>
         <div class="row">
           <div class="col-sm-4">
-             Picture: 
-            </div>
-            <div class="col-sm-8">
-              <textarea class="form-control" rows="2" id=pit-drive-train>placeholder</textarea>
-            </div>
-            <div class="col-sm-4">
-              Drive Train description
-            </div>
-            <div class="col-sm-8">
-              <textarea class="form-control" rows="2" id=pit-drive-train></textarea>
-            </div>
-            <div class="col-sm-4">
-              Estimated Speed
-            </div>
-            <div class="col-sm-8">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="pit-drive-speed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Speed (mph)
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="pit-drive-speed-dropdown">
-                  <li><a href="#">10</a></li>
-                  <li><a href="#">20</a></li>
-                  <li><a href="#">30</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              Robot Height
-            </div>
-            <div class="col-sm-8">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="pit-robot-height" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Height
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="pit-robot-height-dropdown">
-                  <li><a href="#">Tall</a></li>
-                  <li><a href="#">Short</a></li>
-                </ul>
-              </div>
-            </div>
+           Picture: 
+         </div>
+         <div class="col-sm-8">
+          <textarea class="form-control" rows="2" id=pit-drive-train>placeholder</textarea>
         </div>
-        <h2>Game Information</h2>
+        <div class="col-sm-4">
+          Drive Train description
+        </div>
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" id=pit-drive-train></textarea>
+        </div>
+        <div class="col-sm-4">
+          Estimated Speed
+        </div>
+        <div class="col-sm-8">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="pit-drive-speed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Speed (mph)
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="pit-drive-speed-dropdown">
+              <li><a href="#">10</a></li>
+              <li><a href="#">20</a></li>
+              <li><a href="#">30</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          Robot Height
+        </div>
+        <div class="col-sm-8">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="pit-robot-height" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Height
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="pit-robot-height-dropdown">
+              <li><a href="#">Tall</a></li>
+              <li><a href="#">Short</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h2>Game Information</h2>
+      <div class="row">
+        <div class="col-sm-8 col-xs-8">
+          Shooter?
+        </div>
+        <div class="col-sm-4 col-xs-4">
+          <input type='checkbox' id=pit-shooter>
+        </div>
+        <div class="col-sm-4">
+          Type of Shooter
+        </div>
+        <div class="col-sm-8">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="pit-shooter-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Select
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="pit-shooter-type-dropdown">
+              <li><a href="#">Low</a></li>
+              <li><a href="#">High</a></li>
+              <li><a href="#">Both</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          Ball Collection
+        </div>
+        <div class="col-sm-4">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="pit-collection-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Select
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="pit-collection-type-dropdown">
+              <li><a href="#">Hopper</a></li>
+              <li><a href="#">Player</a></li>
+              <li><a href="#">Both</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          Can place gears?
+        </div>
+        <div class="col-sm-4 col-xs-4">
+          <input type='checkbox' id=pit-gears>
+        </div>
+        <div class="col-sm-8 col-xs-8">
+          Can climb?
+        </div>
+        <div class="col-sm-4 col-xs-4">
+          <input type='checkbox' id=pit-climb>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-primary submit" id="pit-scouting-submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="display:none" id="game-scouting">
+      <h3>Game Scouting: Match <span class='match-number'></span> (<span class='team-name'></span>)</h3>
+      <h2>Autonomous Ability</h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>High Goal Balls Scored</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-high-goals>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Low Goal Balls Scored</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-low-goals>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Gears Scored</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-gears>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
           <div class="row">
             <div class="col-sm-8 col-xs-8">
-              Shooter?
+              Crossing the baseline
             </div>
             <div class="col-sm-4 col-xs-4">
-              <input type='checkbox' id=pit-shooter>
-            </div>
-             <div class="col-sm-4">
-              Type of Shooter
-            </div>
-            <div class="col-sm-8">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="pit-shooter-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Select
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="pit-shooter-type-dropdown">
-                  <li><a href="#">Low</a></li>
-                  <li><a href="#">High</a></li>
-                  <li><a href="#">Both</a></li>
-                </ul>
-              </div>
-            </div>
-             <div class="col-sm-4">
-              Ball Collection
-            </div>
-            <div class="col-sm-4">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="pit-collection-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Select
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="pit-collection-type-dropdown">
-                  <li><a href="#">Hopper</a></li>
-                  <li><a href="#">Player</a></li>
-                  <li><a href="#">Both</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-8">
-              Can place gears?
-            </div>
-            <div class="col-sm-4 col-xs-4">
-              <input type='checkbox' id=pit-gears>
-            </div>
-            <div class="col-sm-8 col-xs-8">
-              Can climb?
-            </div>
-            <div class="col-sm-4 col-xs-4">
-              <input type='checkbox' id=pit-climb>
+              <input type='checkbox' id=game-scouting-auto-baseline>
             </div>
           </div>
+        </div>
       </div>
-      <div class="container-fluid" style="display:none" id="game-scouting">
-        <h3>Game Scouting: Match <span class='match-number'></span> (<span class='team-name'></span>)</h3>
-        <h2>Autonomous Ability</h2>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>High Goal Balls Scored</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-high-goals>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Low Goal Balls Scored</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-low-goals>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Gears Scored</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-gears>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="row">
-              <div class="col-sm-8 col-xs-8">
-                Crossing the baseline
-              </div>
-              <div class="col-sm-4 col-xs-4">
-                <input type='checkbox' id=game-scouting-auto-baseline>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <h2>Teleop Ability</h2>
-        <div class="row">
-          <div class="col-sm-4 col-xs-12">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>High Goal Balls Scored</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-high-goals>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
+      <h2>Teleop Ability</h2>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>High Goal Balls Scored</h3>
             </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Low Goal Balls Scored</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-low-goals>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
             </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Hoppers Activated</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-hoppers>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Gears Scored</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Shooting Fouls</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-shooting-fouls>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Gears Fouls</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears-fouls>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class='row points-element'>
-              <div class='col-sm-12 text-center'>
-                <h3>Human Fouls</h3>
-              </div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
-              </div>
-              <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-human-fouls>0</div>
-              <div class='col-sm-4 col-xs-4'>
-                <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
-              </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-high-goals>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
             </div>
           </div>
         </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Low Goal Balls Scored</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-low-goals>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Hoppers Activated</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-hoppers>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Gears Scored</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Shooting Fouls</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-shooting-fouls>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Gears Fouls</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears-fouls>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Human Fouls</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-human-fouls>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <h2>End Game</h2>
-        <div class="row">
-          <div class="col-sm-4 col-xs-8">
-            Climbing
-          </div>
-          <div class="col-sm-4 col-xs-4">
-            <input type='checkbox' id=game-scouting-climbing>
-          </div>
+      <h2>End Game</h2>
+      <div class="row">
+        <div class="col-sm-4 col-xs-8">
+          Climbing
         </div>
-        <div class="row">
-          <div class="col-sm-4 col-xs-8">
-            Shooting After Climb
-          </div>
-          <div class="col-sm-4 col-xs-4">
-            <input type='checkbox' id=game-scouting-shooting-after-climbing>
-          </div>
+        <div class="col-sm-4 col-xs-4">
+          <input type='checkbox' id=game-scouting-climbing>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-8">
+          Shooting After Climb
+        </div>
+        <div class="col-sm-4 col-xs-4">
+          <input type='checkbox' id=game-scouting-shooting-after-climbing>
+        </div>
+      </div>
 
-        <h2>Other</h2>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="row">
-              <div class="col-sm-8 col-xs-8">
-                Did they put a pilot in the airship?
-              </div>
-              <div class="col-sm-4 col-xs-4">
-                <input type='checkbox' id=game-scouting-ship> 
-              </div>
+      <h2>Other</h2>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-8 col-xs-8">
+              Did they put a pilot in the airship?
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="row">
-              <div class="col-sm-4">
-                Did they play defense? If so, how?
-              </div>
-              <div class="col-sm-8">
-                <textarea class="form-control" rows="2" id=game-scouting-defense></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="row">
-              <div class="col-sm-4">
-                Where is the robot getting fuel?
-              </div>
-              <div class="col-sm-8">
-                <textarea class="form-control" rows="2" id=game-scouting-fuel-location></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="row">
-              <div class="col-sm-4">
-                Any other notes?
-              </div>
-              <div class="col-sm-8">
-                <textarea class="form-control" rows="2" id=game-scouting-final-notes></textarea>
-              </div>
+            <div class="col-sm-4 col-xs-4">
+              <input type='checkbox' id=game-scouting-ship> 
             </div>
           </div>
         </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-4">
+              Did they play defense? If so, how?
+            </div>
+            <div class="col-sm-8">
+              <textarea class="form-control" rows="2" id=game-scouting-defense></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-4">
+              Where is the robot getting fuel?
+            </div>
+            <div class="col-sm-8">
+              <textarea class="form-control" rows="2" id=game-scouting-fuel-location></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-4">
+              Any other notes?
+            </div>
+            <div class="col-sm-8">
+              <textarea class="form-control" rows="2" id=game-scouting-final-notes></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <button class="btn btn-primary submit" id="game-scouting-submit">Submit</button>
-          </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-primary submit" id="game-scouting-submit">Submit</button>
         </div>
+      </div>
 <!-- 
 Autonomous ability: 
 Gears? 
