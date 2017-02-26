@@ -77,7 +77,7 @@ $(document).ready(function(){
     // submit form
     var data = getGameScoutingData();
     
-    var filename = "match" + $("#game-scouting span.match-number").text() + "-" + $("#game-scouting span.team-name").text();
+    var filename = "match" + $("#game-scouting span.match-number").text() + "-" + $("#game-scouting span.team-name").text() + ".json";
     
     window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
       alert(cordova.file.externalDataDirectory);
