@@ -49,7 +49,7 @@
           <button id="capture-photo-button">Capture Photo</button> <br />
           <button id="upload-photo-button">From Photo Library</button><br>
           <img style="display:none;width:200px;height:400px;" id="smallImage" src="" />
-          <img style="display:none;" id="largeImage" src="" />
+          <img style="display:none;width:400px;height:200px;" id="largeImage" src="" />
         </div>
         <div class="col-sm-4">
           Drive Train description
@@ -91,10 +91,10 @@
       </div>
       <h2>Game Information</h2>
       <div class="row">
-        <div class="col-sm-8 col-xs-8">
-          Shooter?
+        <div class="col-sm-8">
+          Has a shooter?
         </div>
-        <div class="col-sm-4 col-xs-4">
+        <div class="col-sm-4">
           <input type='checkbox' id=pit-shooter>
         </div>
         <div class="col-sm-4">
@@ -129,16 +129,16 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-8 col-xs-8">
+        <div class="col-sm-8">
           Can place gears?
         </div>
-        <div class="col-sm-4 col-xs-4">
+        <div class="col-sm-4">
           <input type='checkbox' id=pit-gears>
         </div>
-        <div class="col-sm-8 col-xs-8">
+        <div class="col-sm-8">
           Can climb?
         </div>
-        <div class="col-sm-4 col-xs-4">
+        <div class="col-sm-4">
           <input type='checkbox' id=pit-climb>
         </div>
       </div>

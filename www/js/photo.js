@@ -29,7 +29,7 @@ $("#capture-photo-button").click(function() {
     });
 
  $("#upload-photo-button").click(function() {
-   navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, destinationType: destinationType.FILE_URI, sourceType: pictureSource.PHOTOLIBRARY });
+  navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, destinationType: destinationType.FILE_URI, sourceType: pictureSource.PHOTOLIBRARY });
  });
 
 // Called if something bad happens.
