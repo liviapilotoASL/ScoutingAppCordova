@@ -15,7 +15,7 @@ matches.select! { |e| e["comp_level"] == "qm" }
 matches.sort! {|x,y| x["match_number"] <=> y["match_number"]}
 
 #=begin
-File.open "matches.html", "w" do |file|
+File.open "pages/partials/matches.html", "w" do |file|
   file.write(%Q(
   <div class="row">
   ))
