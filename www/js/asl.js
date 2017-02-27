@@ -5,6 +5,24 @@ function returnToMainPage() {
   })
 }
 
+function handleBackButton() {
+  console.log("going home")
+  
+  if($("#game-scouting").is(":visible")) {
+    $("#game-scouting:visible").fadeOut(function(){
+      $("#game-home").fadeIn();
+    })
+  } else if($("#pit-scouting").is(":visible")) {
+    $("#pit-scouting:visible").fadeOut(function(){
+      $("#pit-home").fadeIn();
+    })
+  } else {
+    $("#game-home:visible, #pit-home:visible").fadeOut(function(){
+      $("#home").fadeIn();
+    })
+  }
+}
+
 function clearGameScouting() {
   $('.points-total').text(0);
   
@@ -114,5 +132,5 @@ $(document).ready(function(){
     });
   });
   
-  document.addEventListener("backbutton", returnToMainPage, false);
+  document.addEventListener("backbutton", handleBackButton, false);
 });

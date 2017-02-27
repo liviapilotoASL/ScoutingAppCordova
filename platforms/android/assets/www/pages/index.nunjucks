@@ -48,8 +48,8 @@
          <div class="col-sm-8">
           <button id="capture-photo-button">Capture Photo</button> <br />
           <button id="upload-photo-button">From Photo Library</button><br>
-          <img style="display:none;width:200px;height:400px;" id="smallImage" src="" />
-          <img style="display:none;width:400px;height:200px;" id="largeImage" src="" />
+          <img class="img-responsive" style="display:none" id="smallImage" src="" />
+          <img class="img-responsive" style="display:none" id="largeImage" src="" />
         </div>
         <div class="col-sm-4">
           Drive Train description
