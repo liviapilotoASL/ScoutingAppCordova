@@ -126,16 +126,23 @@ function getGameScoutingData() {
   var data = {};
   data["auto"] = {};
   data["auto"]["high-goals"] =  parseInt($("#game-scouting-auto-high-goals").text());
+  data["auto"]["high-goals-time"] = parseInt($("#game-scouting-auto-high-goals-time").text());
   data["auto"]["low-goals"] = parseInt($("#game-scouting-auto-low-goals").text());
-  data["auto"]["gears"] = parseInt($("#game-scouting-auto-gears").text());
+  data["auto"]["low-goals-time"] = parseInt($("#game-scouting-auto-low-goals-time").text());
+  data["auto"]["gears-attempted"] = parseInt($("#game-scouting-auto-gears-attempted").text());
+  data["auto"]["gears-scored"] = parseInt($("#game-scouting-auto-gears").text());
+  data["auto"]["gears-time"] = parseInt($("#game-scouting-auto-gears-time").text());
   data["auto"]["baseline"] = $("#game-scouting-auto-baseline").prop("checked");
   
   data["teleop"] = {};
   data["teleop"]["high-goals"] = parseInt($("#game-scouting-high-goals").text());
+  data["teleop"]["high-goals-time"] = parseInt($("#game-scouting-high-goals-time").text());
   data["teleop"]["low-goals"] = parseInt($("#game-scouting-low-goals").text());
+  data["teleop"]["low-goals-time"] = parseInt($("#game-scouting-low-goals-time").text());
   data["teleop"]["hoppers"] = parseInt($("#game-scouting-hoppers").text());
-  data["teleop"]["gears"] = 
-  parseInt($("#game-scouting-gears").text());
+  data["teleop"]["gears-attempted"] = parseInt($("#game-scouting-gears-attempted").text());
+  data["teleop"]["gears-scored"] = parseInt($("#game-scouting-gears").text());
+  data["teleop"]["gears-time"] = parseInt($("#game-scouting-gears-time").text());
   
   data["fouls"] ={};
   data["fouls"]["gears"] = parseInt($("#game-scouting-gears-fouls").text());
@@ -152,20 +159,29 @@ function getGameScoutingData() {
   data["other"]["pilot"] = $("#game-scouting-ship").prop("checked");
   data["other"]["defense"] = $("#game-scouting-defense").val();
   data["other"]["fuel"] = $("#game-scouting-fuel-location").val();
+  data["other"]["strategy-notes"] = $("#game-scouting-strategy-notes").val();
   data["other"]["notes"] = $("#game-scouting-final-notes").val();
   return data
 }
 
 function refillGameScoutingData(data) {
   $("#game-scouting-auto-high-goals").text(data["auto"]["high-goals"]);
+  $("#game-scouting-auto-high-goals-time").text(data["auto"]["high-goals-time"]);
   $("#game-scouting-auto-low-goals").text(data["auto"]["low-goals"]);
-  $("#game-scouting-auto-gears").text(data["auto"]["gears"]);
+  $("#game-scouting-auto-low-goals-time").text(data["auto"]["low-goals-time"]);
+  $("#game-scouting-auto-gears-attempted").text(data["auto"]["gears-attempted"]);
+  $("#game-scouting-auto-gears").text(data["auto"]["gears-scored"]);
+  $("#game-scouting-auto-gears-time").text(data["auto"]["gears-time"]);
   $("#game-scouting-auto-baseline").prop("checked", data["auto"]["baseline"]);
   
   $("#game-scouting-high-goals").text(data["teleop"]["high-goals"]);
+  $("#game-scouting-high-goals-time").text(data["teleop"]["high-goals-time"]);
   $("#game-scouting-low-goals").text(data["teleop"]["low-goals"]);
+  $("#game-scouting-low-goals-time").text(data["teleop"]["low-goals-time"]);
   $("#game-scouting-hoppers").text(data["teleop"]["hoppers"]);
-  $("#game-scouting-gears").text(data["teleop"]["gears"]);
+  $("#game-scouting-gears-attempted").text(data["teleop"]["gears-attempted"]);
+  $("#game-scouting-gears").text(data["teleop"]["gears-scored"]);
+  $("#game-scouting-gears-time").text(data["teleop"]["gears-time"]);
   
   $("#game-scouting-gears-fouls").text(data["fouls"]["gears"]);
   $("#game-scouting-human-fouls").text(data["fouls"]["human"]);
@@ -178,6 +194,7 @@ function refillGameScoutingData(data) {
   $("#game-scouting-ship").prop("checked", data["other"]["pilot"]);
   $("#game-scouting-defense").val(data["other"]["defense"]);
   $("#game-scouting-fuel-location").val(data["other"]["fuel"]);
+  $("#game-scouting-strategy-notes").val(data["other"]["strategy-notes"]);
   $("#game-scouting-final-notes").val(data["other"]["notes"]);
 }
 
@@ -210,7 +227,7 @@ $(document).ready(function(){
   $("#game-scouting-submit").click(function() {
     // submit form
     var data = getGameScoutingData();
-    
+    console.log(data)
     var filename = "match" + $("#game-scouting span.match-number").text() + "-" + $("#game-scouting span.team-name").text() + ".json";
     
     window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {

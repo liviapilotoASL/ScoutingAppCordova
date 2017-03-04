@@ -28,7 +28,7 @@
     <title>ASL Scouting App</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid navbar-parent">
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -171,6 +171,20 @@
         <div class="col-sm-4">
           <div class='row points-element'>
             <div class='col-sm-12 text-center'>
+              <h3>Time Spent Scoring High Goals (seconds)</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-high-goals-time>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
               <h3>Low Goal Balls Scored</h3>
             </div>
             <div class='col-sm-4 col-xs-4'>
@@ -180,6 +194,34 @@
             <div class='col-sm-4 col-xs-4'>
               <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
             </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Time Spent Scoring Low Goals (seconds)</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-low-goals-time>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Gears Attempted</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-gears-attempted>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div> 
           </div>
         </div>
         <div class="col-sm-4">
@@ -196,7 +238,21 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Time Spent Scoring Gears</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-auto-gears-time>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
           <div class="row">
             <div class="col-sm-8 col-xs-8">
               Crossing the baseline
@@ -227,12 +283,40 @@
         <div class="col-sm-4 col-xs-12">
           <div class='row points-element'>
             <div class='col-sm-12 text-center'>
+              <h3>Time Spent Scoring High Goals (seconds)</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-high-goals-time>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
               <h3>Low Goal Balls Scored</h3>
             </div>
             <div class='col-sm-4 col-xs-4'>
               <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
             </div>
             <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-low-goals>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Time Spent Scoring Low Goals (seconds)</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-low-goals-time>0</div>
             <div class='col-sm-4 col-xs-4'>
               <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
             </div>
@@ -255,12 +339,40 @@
         <div class="col-sm-4 col-xs-12">
           <div class='row points-element'>
             <div class='col-sm-12 text-center'>
+              <h3>Gears Attempted</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears-attempted>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
               <h3>Gears Scored</h3>
             </div>
             <div class='col-sm-4 col-xs-4'>
               <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
             </div>
             <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears>0</div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class='row points-element'>
+            <div class='col-sm-12 text-center'>
+              <h3>Time Spent Scoring Gears (seconds)</h3>
+            </div>
+            <div class='col-sm-4 col-xs-4'>
+              <button class='btn btn-primary btn-lg pull-right points-down'> - </button>
+            </div>
+            <div class='col-sm-4 col-xs-4 text-center points-total' id=game-scouting-gears-time>0</div>
             <div class='col-sm-4 col-xs-4'>
               <button class='btn btn-primary btn-lg pull-left points-up'> + </button>
             </div>
@@ -363,6 +475,16 @@
         <div class="col-sm-6">
           <div class="row">
             <div class="col-sm-4">
+              Strategy notes
+            </div>
+            <div class="col-sm-8">
+              <textarea class="form-control" rows="2" id=game-scouting-strategy-notes></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-4">
               Any other notes?
             </div>
             <div class="col-sm-8">
@@ -377,6 +499,7 @@
           <button class="btn btn-primary submit" id="game-scouting-submit">Submit</button>
         </div>
       </div>
+    </div>
 <!-- 
 Autonomous ability: 
 Gears? 
