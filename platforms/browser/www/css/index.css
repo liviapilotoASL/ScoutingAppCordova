@@ -15,7 +15,7 @@
   line-height: 100%;
 }
 
-.submit {
+.submit, .clear {
   width: 100%;
   margin: 20px 5px !important;
 }

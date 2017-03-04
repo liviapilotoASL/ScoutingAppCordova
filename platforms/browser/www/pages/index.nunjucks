@@ -39,14 +39,22 @@
       </nav>
       <div class="container-fluid" style="display:none" id="pit-scouting">
         <h1>Pit Scouting</h1>
-        <h2 class='team-name'></h2>
+        <h2 id='team-name'></h2>
+        <div class="row">
+          <div class="col-sm-12">
+          <button class="btn btn-primary clear" id="pit-scouting-clear">Clear</button>
+          </div>
+        </div>
         <h2>General Robot Information</h2>
         <div class="row">
           <div class="col-sm-4">
            Picture: 
          </div>
          <div class="col-sm-8">
-          <textarea class="form-control" rows="2" id=pit-drive-train>placeholder</textarea>
+          <button id="capture-photo-button" class="btn btn-primary">Capture Photo</button> <br />
+          <button id="upload-photo-button" class="btn btn-primary">From Photo Library</button><br>
+          <img class="img-responsive" style="display:none" id="smallImage" src="" />
+          <img class="img-responsive" style="display:none" id="largeImage" src="" />
         </div>
         <div class="col-sm-4">
           Drive Train description
@@ -59,15 +67,12 @@
         </div>
         <div class="col-sm-8">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="pit-drive-speed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Speed (mph)
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="pit-drive-speed-dropdown">
-              <li><a href="#">10</a></li>
-              <li><a href="#">20</a></li>
-              <li><a href="#">30</a></li>
-            </ul>
+            <select id="select-speed">
+              <option disabled value="default">Select</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
           </div>
         </div>
         <div class="col-sm-4">
@@ -75,23 +80,20 @@
         </div>
         <div class="col-sm-8">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="pit-robot-height" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Height
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="pit-robot-height-dropdown">
-              <li><a href="#">Tall</a></li>
-              <li><a href="#">Short</a></li>
-            </ul>
+            <select id="select-height">
+              <option disabled value="default">Select</option>
+              <option value="tall">Tall</option>
+              <option value="short">Short</option>
+            </select>
           </div>
         </div>
       </div>
       <h2>Game Information</h2>
       <div class="row">
-        <div class="col-sm-8 col-xs-8">
-          Shooter?
+        <div class="col-sm-8">
+          Has a shooter?
         </div>
-        <div class="col-sm-4 col-xs-4">
+        <div class="col-sm-4">
           <input type='checkbox' id=pit-shooter>
         </div>
         <div class="col-sm-4">
@@ -99,15 +101,13 @@
         </div>
         <div class="col-sm-8">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="pit-shooter-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Select
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="pit-shooter-type-dropdown">
-              <li><a href="#">Low</a></li>
-              <li><a href="#">High</a></li>
-              <li><a href="#">Both</a></li>
-            </ul>
+            <select id="select-shooter">
+              <option diabled value="default">Select</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+              <option value="both">Both</option>
+              <option value="neither">Neither</option>
+            </select>
           </div>
         </div>
         <div class="col-sm-4">
@@ -115,27 +115,25 @@
         </div>
         <div class="col-sm-4">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="pit-collection-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Select
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="pit-collection-type-dropdown">
-              <li><a href="#">Hopper</a></li>
-              <li><a href="#">Player</a></li>
-              <li><a href="#">Both</a></li>
-            </ul>
+            <select id="select-ball">
+              <option diabled value="default">Select</option>
+              <option value="hopper">Hopper</option>
+              <option value="player">Player</option>
+              <option value="both">Both</option>
+              <option value="neither">Neither</option>
+            </select>
           </div>
         </div>
-        <div class="col-sm-8 col-xs-8">
+        <div class="col-sm-8">
           Can place gears?
         </div>
-        <div class="col-sm-4 col-xs-4">
+        <div class="col-sm-4">
           <input type='checkbox' id=pit-gears>
         </div>
-        <div class="col-sm-8 col-xs-8">
+        <div class="col-sm-8">
           Can climb?
         </div>
-        <div class="col-sm-4 col-xs-4">
+        <div class="col-sm-4">
           <input type='checkbox' id=pit-climb>
         </div>
       </div>
@@ -149,7 +147,11 @@
 
     <div class="container-fluid" style="display:none" id="game-scouting">
       <h3>Game Scouting: Match <span class='match-number'></span> (<span class='team-name'></span>)</h3>
-
+      <div class="row">
+        <div class="col-sm-12">
+        <button class="btn btn-primary clear" id="game-scouting-clear">Clear</button>
+        </div>
+      </div>
       <h2>Autonomous Ability</h2>
       <div class="row">
         <div class="col-sm-4">
@@ -413,5 +415,6 @@ Are they activating the hopper? Where is the robot getting the fuel?
   <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
   <script type="text/javascript" src="js/asl.js"></script>
+  <script type="text/javascript" src="js/photo.js"></script>
 </body>
 </html>
