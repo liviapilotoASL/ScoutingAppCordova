@@ -45,7 +45,7 @@ function getPitDataIfExists(teamName) {
         var reader = new FileReader();
 
         reader.onloadend = function() {
-            refillGameScoutingData(JSON.parse(this.result));
+            refillPitScoutingData(JSON.parse(this.result));
         };
 
         reader.readAsText(file);
@@ -244,7 +244,8 @@ $(document).ready(function(){
   
   $('.asl-pit-scouting').click(function(){
     var teamName = $(this).parent().parent().attr('data-team');
-    var matchNumber = $(this).parent().parent().attr('data-match');
+    //getPitDataIfExists(teamName);
+    
     $("#pit-home").fadeOut(function(){
       $("#pit-scouting").fadeIn();
       $("#team-name").text(teamName);

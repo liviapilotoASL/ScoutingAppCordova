@@ -36,3 +36,11 @@
 #game-scouting h3 {
   height: 52px;
 }
+
+.container-fluid:not(.navbar-parent) {
+  margin: 0 15px !important;
+}
+
+h3 {
+  margin: 0 !important;
+}

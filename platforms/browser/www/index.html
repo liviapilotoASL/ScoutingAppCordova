@@ -42,102 +42,172 @@
         <h2 id='team-name'></h2>
         <div class="row">
           <div class="col-sm-12">
-          <button class="btn btn-primary clear" id="pit-scouting-clear">Clear</button>
+            <button class="btn btn-primary clear" id="pit-scouting-clear">Clear</button>
           </div>
         </div>
         <h2>General Robot Information</h2>
         <div class="row">
           <div class="col-sm-4">
-           Picture: 
-         </div>
-         <div class="col-sm-8">
-          <button id="capture-photo-button" class="btn btn-primary">Capture Photo</button> <br />
-          <button id="upload-photo-button" class="btn btn-primary">From Photo Library</button><br>
-          <img class="img-responsive" style="display:none" id="smallImage" src="" />
-          <img class="img-responsive" style="display:none" id="largeImage" src="" />
-        </div>
-        <div class="col-sm-4">
-          Drive Train description
-        </div>
-        <div class="col-sm-8">
-          <textarea class="form-control" rows="2" id=pit-drive-train></textarea>
-        </div>
-        <div class="col-sm-4">
-          Estimated Speed
-        </div>
-        <div class="col-sm-8">
-          <div class="dropdown">
-            <select id="select-speed">
-              <option disabled value="default">Select</option>
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="30">30</option>
-            </select>
+           <h2>Picture: </h2>
+          </div>
+          <div class="col-sm-8">
+            <button id="capture-photo-button" class="btn btn-primary">Capture Photo</button> <br />
+            <button id="upload-photo-button" class="btn btn-primary">From Photo Library</button><br>
+            <img class="img-responsive" style="display:none" id="smallImage" src="" />
+            <img class="img-responsive" style="display:none" id="largeImage" src="" />
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Strategic Role / 战略: </h3>
+            </div>
+            <div class="col-sm-8">
+              <ul class="list-unstyled">
+                <li><label><input type="radio" name="role" value="shooter"> Shooter</input></label></li>
+                <li><label><input type="radio" name="role" value="gear"> Gear Manipulator</input></label></li>
+                <li><label><input type="radio" name="role" value="climber"> Climber</input></label></li>
+                <li><label>
+                  <input type="radio" name="role" value="hybrid" > Hybrid (explain):</input>
+                  <input type ="text" name="other"/>
+                </label></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Autonomous Capabilities: </h3>
+            </div>
+            <div class="col-sm-8">
+              <ul class="list-unstyled">
+                <li><label><input type="checkbox" name="cross"> Cross</input></label></li>
+                <li><label><input type="checkbox" name="shoot-high"> Shoot High</input></label></li>
+                <li><label><input type="checkbox" name="shoot-low"> Shoot Low</input></label></li>
+                <li><label><input type="checkbox" name="gear"> Gear</input></label></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Programming Language: </h3>
+            </div>
+            <div class="col-sm-8">
+              <ul class="list-unstyled">
+                <li><label><input type="radio" name="lang" value="java"> Java</input></label></li>
+                <li><label><input type="radio" name="lang" value="cpp"> C++</input></label></li>
+                <li><label><input type="radio" name="lang" value="labview"> LabView</input></label></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Robot Dimensions (L x W x H): </h3>
+            </div>
+            <div class="col-sm-8">
+              <ul class="list-unstyled">
+                <li><label><input type="radio" name="lang" value="short"> 40" x 36" x 24"</input></label></li>
+                <li><label><input type="radio" name="lang" value="tall"> 32" x 30" x 36"</input></label></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Robot Weight: </h3>
+            </div>
+            <div class="col-sm-8">
+              <label><input type ="text" name="other"/>  lbs</label>
+            </div>
           </div>
         </div>
-        <div class="col-sm-4">
-          Robot Height
-        </div>
-        <div class="col-sm-8">
-          <div class="dropdown">
-            <select id="select-height">
-              <option disabled value="default">Select</option>
-              <option value="tall">Tall</option>
-              <option value="short">Short</option>
-            </select>
+        <h2>Drivetrain:</h2>
+        <div class="row">
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Type: </h3>
+            </div>
+            <div class="col-sm-8">
+              <ul class="list-unstyled">
+                <li><label><input type="radio" name="drivetrain" value="swerve"> Swerve</input></label></li>
+                <li><label><input type="radio" name="drivetrain" value="omni"> Omni</input></label></li>
+                <li><label><input type="radio" name="drivetrain" value="mecanum"> Mecanum</input></label></li>
+                <li><label><input type="radio" name="drivetrain" value="slide"> Slide (H)</input></label></li>
+                <li><label><input type="radio" name="drivetrain" value="tank"> Tank</input></label></li>
+                <li><label><input type="radio" name="drivetrain" value="west-coast"> West Coast</input></label></li>
+                <li><label>
+                  <input type="radio" name="drivetrain" value="custom" > Custom:</input>
+                  <input type ="text" name="other"/>
+                </label></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <h2>Game Information</h2>
-      <div class="row">
-        <div class="col-sm-8">
-          Has a shooter?
-        </div>
-        <div class="col-sm-4">
-          <input type='checkbox' id=pit-shooter>
-        </div>
-        <div class="col-sm-4">
-          Type of Shooter
-        </div>
-        <div class="col-sm-8">
-          <div class="dropdown">
-            <select id="select-shooter">
-              <option diabled value="default">Select</option>
-              <option value="low">Low</option>
-              <option value="high">High</option>
-              <option value="both">Both</option>
-              <option value="neither">Neither</option>
-            </select>
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>Wheel Specifications:</h3>
+          </div>
+          <div class="col-sm-8">
+            <ul class="list-unstyled">
+              <li><label>Size: <input type="text" name="size"/></label></li>
+              <li><label>Type: <input type="text" name="type"/></label></li>
+              <li><label>Quantity: <input type="text" name="quantity"/></label></li>
+            </ul>
           </div>
         </div>
-        <div class="col-sm-4">
-          Ball Collection
-        </div>
-        <div class="col-sm-4">
-          <div class="dropdown">
-            <select id="select-ball">
-              <option diabled value="default">Select</option>
-              <option value="hopper">Hopper</option>
-              <option value="player">Player</option>
-              <option value="both">Both</option>
-              <option value="neither">Neither</option>
-            </select>
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>Gearbox:</h3>
+          </div>
+          <div class="col-sm-8">
+            <ul class="list-unstyled">
+              <li><label><input type="checkbox" name="shift"/> Does it shift?</label></li>
+              <li><label><input type="checkbox" name="high-speed"/> High speed</label></li>
+              <li><label><input type="checkbox" name="low-speed"/> Low speed (leave blank if one speed)</label></li>
+            </ul>
           </div>
         </div>
-        <div class="col-sm-8">
-          Can place gears?
+        <h2>Mechanisms:</h2>
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>Shooter:</h3>
+          </div>
+          <div class="col-sm-8">
+            <ul class="list-unstyled">
+              <li><label><input type="checkbox" name="shooter-high"/> High goal shooting</label></li>
+              <li><label><input type="checkbox" name="shooter-low"/> Low goal shooting</label></li>
+              <li>Brief Description:</li>
+              <li><textarea class="form-control" rows="2"></textarea></li>
+            </ul>
+          </div>
         </div>
-        <div class="col-sm-4">
-          <input type='checkbox' id=pit-gears>
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>Gear:</h3>
+          </div>
+          <div class="col-sm-8">
+            <ul class="list-unstyled">
+              <li><label><input type="checkbox" name="gear-chute"/> Intake gears from chute</label></li>
+              <li><label><input type="checkbox" name="gear-floor"/> Intake gears from floor</label></li>
+              <li>Brief Description:</li>
+              <li><textarea class="form-control" rows="2"></textarea></li>
+            </ul>
+          </div>
         </div>
-        <div class="col-sm-8">
-          Can climb?
+        <div class="row">
+          <div class="col-sm-4">
+            <h3>Climber:</h3>
+          </div>
+          <div class="col-sm-8">
+            <ul class="list-unstyled">
+              <li><label><input type="checkbox" name="shooter-high"/> Can climb</label></li>
+              <li>Brief Description:</li>
+              <li><textarea class="form-control" rows="2"></textarea></li>
+            </ul>
+          </div>
         </div>
-        <div class="col-sm-4">
-          <input type='checkbox' id=pit-climb>
+        <h2>Other comments:</h2>
+        <div class="row">
+          <div class="col-sm-12">
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
         </div>
-      </div>
-      <div class="row">
         <div class="col-sm-12">
         <button class="btn btn-primary submit" id="pit-scouting-submit">Submit</button>
         </div>
