@@ -67,7 +67,7 @@
                 <li><label><input type="radio" name="role" value="climber"> Climber</input></label></li>
                 <li>
                   <label><input type="radio" name="role" value="hybrid" > Hybrid (explain):</input></label>
-                  <input type ="text" name="other"/>
+                  <input type ="text" id="pit-role-other"/>
                 </li>
               </ul>
             </div>
@@ -78,10 +78,10 @@
             </div>
             <div class="col-sm-8">
               <ul class="list-unstyled">
-                <li><label><input type="checkbox" name="cross"> Cross</input></label></li>
-                <li><label><input type="checkbox" name="shoot-high"> Shoot High</input></label></li>
-                <li><label><input type="checkbox" name="shoot-low"> Shoot Low</input></label></li>
-                <li><label><input type="checkbox" name="gear"> Gear</input></label></li>
+                <li><label><input type="checkbox" id="pit-cross"> Cross</input></label></li>
+                <li><label><input type="checkbox" id="pit-shoot-high"> Shoot High</input></label></li>
+                <li><label><input type="checkbox" id="pit-shoot-low"> Shoot Low</input></label></li>
+                <li><label><input type="checkbox" id="pit-gear"> Gear</input></label></li>
               </ul>
             </div>
           </div>
@@ -103,8 +103,8 @@
             </div>
             <div class="col-sm-8">
               <ul class="list-unstyled">
-                <li><label><input type="radio" name="lang" value="short"> 40" x 36" x 24"</input></label></li>
-                <li><label><input type="radio" name="lang" value="tall"> 32" x 30" x 36"</input></label></li>
+                <li><label><input type="radio" name="dimension" value="short"> 40" x 36" x 24"</input></label></li>
+                <li><label><input type="radio" name="dimension" value="tall"> 32" x 30" x 36"</input></label></li>
               </ul>
             </div>
           </div>
@@ -113,7 +113,7 @@
               <h3>Robot Weight: </h3>
             </div>
             <div class="col-sm-8">
-              <label><input type="number" name="other"/>  lbs</label>
+              <label><input type="number" id="pit-weight"/>  lbs</label>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@
                 <li><label><input type="radio" name="drivetrain" value="west-coast"> West Coast</input></label></li>
                 <li>
                   <label><input type="radio" name="drivetrain" value="custom" > Custom:</input></label>
-                  <input type ="text" name="other"/>
+                  <input type ="text" id="pit-custom-drivetrain"/>
                 </li>
               </ul>
             </div>
@@ -145,9 +145,9 @@
           </div>
           <div class="col-sm-8">
             <ul class="list-unstyled">
-              <li><label>Size: <input type="text" name="size"/></label></li>
-              <li><label>Type: <input type="text" name="type"/></label></li>
-              <li><label>Quantity: <input type="text" name="quantity"/></label></li>
+              <li><label>Size: <input type="text" id="pit-wheel-size"/></label></li>
+              <li><label>Type: <input type="text" id="pit-wheel-type"/></label></li>
+              <li><label>Quantity: <input type="text" id="pit-wheel-quantity"/></label></li>
             </ul>
           </div>
         </div>
@@ -157,9 +157,9 @@
           </div>
           <div class="col-sm-8">
             <ul class="list-unstyled">
-              <li><label><input type="checkbox" name="shift"/> Does it shift?</label></li>
-              <li><label><input type="text" name="high-speed"/> High speed</label></li>
-              <li><label><input type="text" name="low-speed"/> Low speed (leave blank if one speed)</label></li>
+              <li><label><input type="checkbox" id="pit-gear-shift"/> Does it shift?</label></li>
+              <li><label><input type="text" id="pit-high-speed"/> High speed</label></li>
+              <li><label><input type="text" id="pit-low-speed"/> Low speed (leave blank if one speed)</label></li>
             </ul>
           </div>
         </div>
@@ -170,10 +170,10 @@
           </div>
           <div class="col-sm-8">
             <ul class="list-unstyled">
-              <li><label><input type="checkbox" name="shooter-high"/> High goal shooting</label></li>
-              <li><label><input type="checkbox" name="shooter-low"/> Low goal shooting</label></li>
+              <li><label><input type="checkbox" id="pit-shooter-high"/> High goal shooting</label></li>
+              <li><label><input type="checkbox" id="pit-shooter-low"/> Low goal shooting</label></li>
               <li>Brief Description:</li>
-              <li><textarea class="form-control" rows="2"></textarea></li>
+              <li><textarea id="pit-shooter-description" class="form-control" rows="2"></textarea></li>
             </ul>
           </div>
         </div>
@@ -183,10 +183,10 @@
           </div>
           <div class="col-sm-8">
             <ul class="list-unstyled">
-              <li><label><input type="checkbox" name="gear-chute"/> Intake gears from chute</label></li>
-              <li><label><input type="checkbox" name="gear-floor"/> Intake gears from floor</label></li>
+              <li><label><input type="checkbox" id="pit-gear-chute"/> Intake gears from chute</label></li>
+              <li><label><input type="checkbox" id="pit-gear-floor"/> Intake gears from floor</label></li>
               <li>Brief Description:</li>
-              <li><textarea class="form-control" rows="2"></textarea></li>
+              <li><textarea id="pit-gear-description" class="form-control" rows="2"></textarea></li>
             </ul>
           </div>
         </div>
@@ -196,16 +196,16 @@
           </div>
           <div class="col-sm-8">
             <ul class="list-unstyled">
-              <li><label><input type="checkbox" name="shooter-high"/> Can climb</label></li>
+              <li><label><input type="checkbox" id="pit-climb"/> Can climb</label></li>
               <li>Brief Description:</li>
-              <li><textarea class="form-control" rows="2"></textarea></li>
+              <li><textarea id="pit-climb-description" class="form-control" rows="2"></textarea></li>
             </ul>
           </div>
         </div>
         <h2>Other comments:</h2>
         <div class="row">
           <div class="col-sm-12">
-            <textarea class="form-control" rows="4"></textarea>
+            <textarea id="pit-other-comments" class="form-control" rows="4"></textarea>
           </div>
         </div>
         <div class="col-sm-12">

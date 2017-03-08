@@ -31,13 +31,13 @@ function clearPitScouting() {
   .val('');
   
   $('input:checkbox, #pit-scouting').prop('checked', false);
+  $('input:radio, #pit-scouting').prop('checked', false);
   $('#largeImage').attr("src", "");
 }
 
 function getPitDataIfExists(teamName) {
   var filename = teamName + ".json";
   
-  var text = null;
   window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dir) {
     dir.getFile(filename, { create: false }, function (fileEntry) {
       // The file exists, so read data from it
@@ -53,38 +53,86 @@ function getPitDataIfExists(teamName) {
       });
     });
   });
-  
-  return JSON.parse(text);
 }
 
 function getPitScoutingData() {
   var data = {};
   data["general"] = {};
   data["general"]["imgsrc"] = $('#largeImage').attr("src")
-  data["general"]["drivetrain"] = $("#pit-drive-train").val()
-  data["general"]["speed"] = $("#select-speed").val()
-  data["general"]["height"] = $("#select-height").val()
+  data["general"]["role"] = $('input[name=role]:checked').val()
+  if(data["general"]["role"] === "hybrid") {
+    data["general"]["role-other"] = $('#pit-role-other').val()
+  } else {
+    data["general"]["role-other"] = []
+  }
+  data["general"]["auto-cross"] = $('#pit-cross').prop("checked")
+  data["general"]["auto-high"] = $('#pit-shoot-high').prop("checked")
+  data["general"]["auto-low"] = $('#pit-shoot-low').prop("checked")
+  data["general"]["auto-gear"] = $('#pit-gear').prop("checked")
+  data["general"]["language"] = $('input[name=lang]:checked').val()
+  data["general"]["dimensions"] = $('input[name=dimension]:checked').val()
+  data["general"]["weight"] = $('#pit-weight').val()
   
-  data["game"] = {};
-  data["game"]["has-shooter"] = $("#pit-shooter").prop("checked")
-  data["game"]["shooter-type"] = $("#select-shooter").val()
-  data["game"]["ball-collection"] = $("#select-ball").val()
-  data["game"]["can-place-gears"] = $("#pit-gears").prop("checked")
-  data["game"]["can-climb"] = $("#pit-climb").prop("checked")
+  data["drivetrain"] = {};
+  data["drivetrain"]["type"] = $('input[name=drivetrain]:checked').val()
+  if(data["drivetrain"]["type"] === "custom") {
+    data["drivetrain"]["type-other"] = $('#pit-custom-drivetrain').val()
+  } else {
+    data["drivetrain"]["type-other"] = ""
+  }
+  data["drivetrain"]["wheel-size"] = $("#pit-wheel-size").val()
+  data["drivetrain"]["wheel-type"] = $("#pit-wheel-type").val()
+  data["drivetrain"]["wheel-quantity"] = $("#pit-wheel-quantity").val()
+  data["drivetrain"]["two-speed-gearbox"] = $("#pit-gear-shift").prop("checked")
+  data["drivetrain"]["high-speed"] = $("#pit-high-speed").val()
+  data["drivetrain"]["low-speed"] = $("#pit-low-speed").val()
+  
+  data["mechanisms"] = {}
+  data["mechanisms"]["high-goal"] = $("#pit-shooter-high").prop("checked")
+  data["mechanisms"]["low-goal"] = $("#pit-shooter-low").prop("checked")
+  data["mechanisms"]["shooter-description"] = $("#pit-shooter-description").val()
+  data["mechanisms"]["chute-intake"] = $("#pit-gear-chute").prop("checked")
+  data["mechanisms"]["floor-intake"] = $("#pit-gear-floor").prop("checked")
+  data["mechanisms"]["gear-description"] = $("#pit-gear-description").val()
+  data["mechanisms"]["climb"] = $("#pit-climb").prop("checked")
+  data["mechanisms"]["climb-description"] = $("#pit-climb-description").val()
+  
+  data["comments"] = $("#pit-other-comments").val()
   return data
 }
 
 function refillPitScoutingData(data) {
   $('#largeImage').attr("src", data["general"]["imgsrc"])
-  $("#pit-drive-train").val(data["general"]["drivetrain"])
-  $("#select-speed").val(data["general"]["speed"])
-  $("#select-height").val(data["general"]["height"])
+  $("input[name=role][value=" + data["general"]["role"] +  "]" ).prop("checked", true)
+  $('#pit-role-other').val(data["general"]["role-other"])
+  $('#pit-cross').prop("checked", data["general"]["auto-cross"])
+  $('#pit-shoot-high').prop("checked", data["general"]["auto-high"])
+  $('#pit-shoot-low').prop("checked", data["general"]["auto-low"])
+  $('#pit-gear').prop("checked", data["general"]["auto-gear"])
+  $('input[name=lang][value=' + data["general"]["language"] + ']').prop("checked", true)
+  $('input[name=dimension][value=' + data["general"]["dimensions"] + ']').prop("checked", true)
+  $('#pit-weight').val(data["general"]["weight"])
   
-  $("#pit-shooter").prop("checked", data["game"]["has-shooter"])
-  $("#select-shooter").val(data["game"]["shooter-type"])
-  $("#select-ball").val(data["game"]["ball-collection"])
-  $("#pit-gears").prop(data["game"]["can-place-gears"])
-  $("#pit-climb").prop("checked", data["game"]["can-climb"])
+  $("input[name=drivetrain][value=" + data["drivetrain"]["type"] +  "]" ).prop("checked", true)
+  $("#pit-custom-drivetrain").val(data["drivetrain"]["type-other"])
+  
+  $("#pit-wheel-size").val(data["drivetrain"]["wheel-size"])
+  $("#pit-wheel-type").val(data["drivetrain"]["wheel-type"])
+  $("#pit-wheel-quantity").val(data["drivetrain"]["wheel-quantity"])
+  $("#pit-gear-shift").prop("checked", data["drivetrain"]["two-speed-gearbox"])
+  $("#pit-high-speed").val(data["drivetrain"]["high-speed"])
+  $("#pit-low-speed").val(data["drivetrain"]["low-speed"])
+  
+  $("#pit-shooter-high").prop("checked", data["mechanisms"]["high-goal"])
+  $("#pit-shooter-low").prop("checked", data["mechanisms"]["low-goal"])
+  $("#pit-shooter-description").val(data["mechanisms"]["shooter-description"])
+  $("#pit-gear-chute").prop("checked", data["mechanisms"]["chute-intake"])
+  $("#pit-gear-floor").prop("checked", data["mechanisms"]["floor-intake"])
+  $("#pit-gear-description").val(data["mechanisms"]["gear-description"])
+  $("#pit-climb").prop("checked", data["mechanisms"]["climb"])
+  $("#pit-climb-description").val(data["mechanisms"]["climb-description"])
+  
+  $("#pit-other-comments").val(data["comments"])
 }
 
 function clearGameScouting() {
@@ -274,6 +322,8 @@ $(document).ready(function(){
     var filename = filenameBase + ".json"
     
     data["general"]["imgsrc"] = cordova.file.externalDataDirectory + filenameImg
+    
+    console.log(data)
     
     // copy image to data directory
     var folders = imgsrc.split("/")
