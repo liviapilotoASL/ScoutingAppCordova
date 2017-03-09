@@ -190,7 +190,6 @@ function getGameScoutingData() {
   data["teleop"]["hoppers"] = parseInt($("#game-scouting-hoppers").text());
   data["teleop"]["gears-attempted"] = parseInt($("#game-scouting-gears-attempted").text());
   data["teleop"]["gears-scored"] = parseInt($("#game-scouting-gears").text());
-  data["teleop"]["gears-time"] = parseInt($("#game-scouting-gears-time").text());
   
   data["fouls"] ={};
   data["fouls"]["gears"] = parseInt($("#game-scouting-gears-fouls").text());
@@ -230,7 +229,6 @@ function refillGameScoutingData(data) {
   $("#game-scouting-hoppers").text(data["teleop"]["hoppers"]);
   $("#game-scouting-gears-attempted").text(data["teleop"]["gears-attempted"]);
   $("#game-scouting-gears").text(data["teleop"]["gears-scored"]);
-  $("#game-scouting-gears-time").text(data["teleop"]["gears-time"]);
   
   $("#game-scouting-gears-fouls").text(data["fouls"]["gears"]);
   $("#game-scouting-human-fouls").text(data["fouls"]["human"]);
