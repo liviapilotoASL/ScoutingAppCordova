@@ -200,6 +200,7 @@ function getGameScoutingData() {
   parseInt($("#game-scouting-shooting-fouls").text());
   
   data["endgame"] = {};
+  data["endgame"]["climbing-attempted"] = $("#game-scouting-climbing-attempted").prop("checked");
   data["endgame"]["climbing"] = $("#game-scouting-climbing").prop("checked");
   data["endgame"]["shooting"] = $("#game-scouting-shooting-after-climbing").prop("checked");
   
@@ -235,6 +236,7 @@ function refillGameScoutingData(data) {
   $("#game-scouting-human-fouls").text(data["fouls"]["human"]);
   $("#game-scouting-shooting-fouls").text(data["fouls"]["shooting"]);
   
+  $("#game-scouting-climbing-attempted").prop("checked", data["endgame"]["climbing-attempted"]);
   $("#game-scouting-climbing").prop("checked", data["endgame"]["climbing"]);
   $("#game-scouting-shooting-after-climbing").prop("checked", data["endgame"]["shooting"]);
   
