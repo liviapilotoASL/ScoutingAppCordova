@@ -25,7 +25,8 @@ function onPhotoURISuccess(imageURI) {
 
 // A button will call this function
 $("#capture-photo-button").click(function() {
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: destinationType.DATA_URL });
+    //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: destinationType.DATA_URL });
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, destinationType: destinationType.FILE_URI });
     });
 
  $("#upload-photo-button").click(function() {
