@@ -172,6 +172,8 @@ function getGameDataIfExists(teamName, matchNumber) {
 
 function getGameScoutingData() {
   var data = {};
+  data["team"] = $("#game-scouting span.team-name").text();
+  data["match"] = $("#game-scouting span.match-number").text()
   data["auto"] = {};
   data["auto"]["high-goals"] =  parseInt($("#game-scouting-auto-high-goals").text());
   data["auto"]["high-goals-time"] = parseInt($("#game-scouting-auto-high-goals-time").text());
@@ -191,7 +193,7 @@ function getGameScoutingData() {
   data["teleop"]["gears-attempted"] = parseInt($("#game-scouting-gears-attempted").text());
   data["teleop"]["gears-scored"] = parseInt($("#game-scouting-gears").text());
   
-  data["fouls"] ={};
+  data["fouls"] = {};
   data["fouls"]["gears"] = parseInt($("#game-scouting-gears-fouls").text());
   data["fouls"]["human"] = 
   parseInt($("#game-scouting-human-fouls").text());
