@@ -1,8 +1,8 @@
 require 'net/http'
 require 'json'
 
-#compid = "2017gush"
-compid = "2010sc"
+compid = "2017gush"
+#compid = "2010sc"
 
 url = URI.parse("https://www.thebluealliance.com/api/v2/event/#{compid}/matches?X-TBA-App-Id=frc1797:scouting-system:v01")
 req = Net::HTTP::Get.new(url.to_s)
